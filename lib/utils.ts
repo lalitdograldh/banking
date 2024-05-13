@@ -67,14 +67,41 @@ export const formatDateTime = (dateString: Date) => {
 };
 
 export function formatAmount(amount: number): string {
-  const formatter = new Intl.NumberFormat("en-US", {
+  const formatter = new Intl.NumberFormat("en-IN", {
     style: "currency",
-    currency: "USD",
+    currency: "INR",
     minimumFractionDigits: 2,
   });
+  
 
   return formatter.format(amount);
 }
+// export function formatAmount(amount: number, currency: string): string {
+//   let formatter: Intl.NumberFormat;
+//   if (currency === "USD") {
+//     formatter = new Intl.NumberFormat("en-US", {
+//       style: "currency",
+//       currency: "USD",
+//       minimumFractionDigits: 2,
+//     });
+//   } else if (currency === "INR") {
+//     formatter = new Intl.NumberFormat("en-IN", {
+//       style: "currency",
+//       currency: "INR",
+//       minimumFractionDigits: 2,
+//     });
+//   } else {
+//     // Default to USD if currency is not specified or unsupported
+//     formatter = new Intl.NumberFormat("en-US", {
+//       style: "currency",
+//       currency: "USD",
+//       minimumFractionDigits: 2,
+//     });
+//   }
+
+//   return formatter.format(amount);
+// }
+
 
 export const parseStringify = (value: any) => JSON.parse(JSON.stringify(value));
 
